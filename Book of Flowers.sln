@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{1F8AB1D7-7B70-0676-6B85-6BEA47D0D4D3}") = "Book of Flowers", "Assembly-CSharp.csproj", "{475604C6-994B-A866-6B7F-666CCC6AD1D1}"
+EndProject
+Project("{1F8AB1D7-7B70-0676-6B85-6BEA47D0D4D3}") = "Book of Flowers", "Assembly-CSharp-Editor.csproj", "{344CFB00-8100-F8DD-3136-FB8D48258BB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{475604C6-994B-A866-6B7F-666CCC6AD1D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{475604C6-994B-A866-6B7F-666CCC6AD1D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{475604C6-994B-A866-6B7F-666CCC6AD1D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{475604C6-994B-A866-6B7F-666CCC6AD1D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{344CFB00-8100-F8DD-3136-FB8D48258BB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{344CFB00-8100-F8DD-3136-FB8D48258BB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{344CFB00-8100-F8DD-3136-FB8D48258BB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{344CFB00-8100-F8DD-3136-FB8D48258BB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
