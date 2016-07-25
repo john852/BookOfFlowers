@@ -10,7 +10,7 @@ public class Flower : MonoBehaviour {
 
 	protected float minGrowthLength = 5f;
 	protected float maxGrowthLength = 10f;
-	protected float growthFactor = 1f/12f;
+	protected float growthFactor = 1f;
 
 	public Transform stem;
 	protected Transform leaves;
@@ -37,6 +37,7 @@ public class Flower : MonoBehaviour {
 	virtual public void Start () {
 		time = Time.deltaTime;
 		growthLength = Random.Range (minGrowthLength, maxGrowthLength);
+
 		float ramSize = Random.Range (.8f, 1.4f);
 		numOfLeaves = Random.Range (4, 6);
 
@@ -78,9 +79,10 @@ public class Flower : MonoBehaviour {
 	virtual public void Cut() {
 		StartCoroutine (Decay ());
 		growthLength /= 2f;
-
-		if (time >= (growthLength * 2f))
-			time = growthLength * (1.5f);
+		time = growthLength * 1.8f;
+			
+//		if (time >= (growthLength * 2f))
+//			time = growthLength * (1.5f);
 		cut = true;
 	}
 
@@ -105,15 +107,15 @@ public class Flower : MonoBehaviour {
 
 	}
 		
+	protected float wateringFactor = 0.1f;
 	// Update is called once per frame
 	virtual public void Update () {
 		if (!cut) {
 			if (watering) {
-				time += .1f;
+				time += wateringFactor;
 				if (flowerbody.GetComponent<FlowerBody> ().active) {
-					flowerbody.GetComponent<FlowerBody> ().time += .1f;
+					flowerbody.GetComponent<FlowerBody> ().time += wateringFactor;
 				}
-				
 			}
 
 			time += Time.deltaTime;

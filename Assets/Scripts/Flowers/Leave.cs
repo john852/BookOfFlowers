@@ -7,7 +7,7 @@ public class Leave : Petals {
 	public float stopTime;
 	private float growthSize; 
 
-	private float leavTime;
+	public float leavTime;
 	private SpriteRenderer srLeave;
 
 	// Use this for initialization

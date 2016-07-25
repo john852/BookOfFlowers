@@ -16,6 +16,12 @@ public class Sunflower: Flower {
 		base.Update ();
 
 		if (!cut) {
+			if (watering) {
+				foreach (Transform lev in leaves) {
+					lev.GetComponent<Leave> ().leavTime += wateringFactor;
+				}
+			}
+
 			if (!flowerbody.GetComponent<FlowerBody> ().active && !flowerbody.GetComponent<FlowerBody> ().decay && time >= ((1f / 4f) * growthLength)) {
 				SetFlowerBodyActive ();
 			}
@@ -54,10 +60,10 @@ public class Sunflower: Flower {
 			Vector3 pos = new Vector3(Random.Range(seedPosMin.x, seedPosMax.x), Random.Range(seedPosMin.y, seedPosMax.y), seedPosMax.z);
 			if (Random.Range (0, 2) > 0) {
 				Debug.Log ("make two");
-				seed = Instantiate (seedPrefab, pos, Quaternion.identity) as GameObject;
+				seed = Instantiate (seedPrefab, pos, Quaternion.Euler(0f, 90f, 0f)) as GameObject;
 				seed.transform.SetParent (seeds.transform);
 				pos = new Vector3(Random.Range(seedPosMin.x, seedPosMax.x), Random.Range(seedPosMin.y, seedPosMax.y), seedPosMax.z);
-				seed = Instantiate (seedPrefab, pos, Quaternion.identity) as GameObject;
+				seed = Instantiate (seedPrefab, pos, Quaternion.Euler(0f, 90f, 0f)) as GameObject;
 				seed.transform.SetParent (seeds.transform);
 			} else {
 				seed = Instantiate (seedPrefab, pos, Quaternion.Euler(0f, 90f, 0f)) as GameObject;

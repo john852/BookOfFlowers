@@ -16,6 +16,14 @@ public class Rose : Flower {
 		base.Update ();
 
 		if (!cut) {
+
+			if (watering) {
+				foreach (Transform lev in leaves) {
+					lev.GetComponent<Leave> ().leavTime += wateringFactor;
+				}
+			}
+
+
 			if (!flowerbody.GetComponent<FlowerBody> ().active && !flowerbody.GetComponent<FlowerBody> ().decay && time >= ((1f / 4f) * growthLength)) {
 				SetFlowerBodyActive ();
 			}
@@ -37,7 +45,7 @@ public class Rose : Flower {
 				leave = Instantiate (leavePrefab, new Vector3 (0.012f, yPos, 0f), Quaternion.identity) as GameObject;
 				leave.transform.SetParent (leaves.transform, false);
 
-				leave.GetComponent<Leave> ().leaveGrowthLength = ((3f / 4f) * growthLength) / 2f;
+				leave.GetComponent<Leave> ().leaveGrowthLength = ((3f / 8f) * growthLength);
 				leave.GetComponent<Leave> ().stopTime = ((3f / 4f) * growthLength) - time;
 			}
 		}
