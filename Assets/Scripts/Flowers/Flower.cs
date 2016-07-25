@@ -59,10 +59,9 @@ public class Flower : MonoBehaviour {
 		seeds = GameObject.Find ("Seeds");
 
 		rotationSpeed = Random.Range(-0.3f, 0.3f);
-		while (rotationSpeed >= -.05f || rotationSpeed <= .05f) {
+		while (rotationSpeed >= -.1f && rotationSpeed <= .1f) {
 			rotationSpeed = Random.Range(-0.3f, 0.3f);
 		}
-		Debug.Log ("Exited");
 	}
 
 	virtual public void SetFlowerBodyActive() {
@@ -73,7 +72,8 @@ public class Flower : MonoBehaviour {
 
 	}
 
-	protected bool cut = false;
+	public bool cut = false;
+	public float rotationSpeed;
 
 	virtual public void Cut() {
 		StartCoroutine (Decay ());
@@ -104,9 +104,7 @@ public class Flower : MonoBehaviour {
 		}
 
 	}
-
-	protected float rotationSpeed;
-
+		
 	// Update is called once per frame
 	virtual public void Update () {
 		if (!cut) {
@@ -134,11 +132,11 @@ public class Flower : MonoBehaviour {
 		} else {
 			Vector3 rot = this.transform.eulerAngles; 
 
-			if (rot.z <= 60f || rot.z >= -60f) {
-//				this.transform.eulerAngles = new Vector3 (rot.x, rot.y, rot.z + .5f);
+			if ((rot.z <= 80f && rot.z >= 0) || (rot.z >= 280f && rot.z <= 360)) {
 				this.transform.Rotate (new Vector3 (0f, 0f, rotationSpeed));
 				this.transform.GetChild (2).Rotate (new Vector3 (0f, 0f, -rotationSpeed));
 			}
+
 		}
 	}
 }

@@ -32,7 +32,7 @@ public class Scissors : MonoBehaviour {
 			ResetCan ();
 		}
 		if (col.gameObject.tag == "stem") {
-			Debug.Log ("cutting stem");
+			col.gameObject.GetComponent<Flower> ().Cut ();
 		}
 	}
 
@@ -61,5 +61,9 @@ public class Scissors : MonoBehaviour {
 
 	void Update() {
 		this.transform.eulerAngles = new Vector3 (0f, 180f, 0f); 
+		Vector3 pos = this.transform.position;
+		if ((pos.x >= 6.5f || pos.x <= -5.5f) || (pos.y >= 4.2f || pos.y <= -3.8f)) {
+			ResetCan ();
+		}
 	}
 }
