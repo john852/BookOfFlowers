@@ -25,6 +25,8 @@ public class Scissors : MonoBehaviour {
 		}
 		held = false;
 		this.GetComponent<Animator> ().SetBool ("cutting", false);
+		this.GetComponent<AudioSource> ().Stop();
+
 	}
 
 	void OnCollisionEnter(Collision col) {
@@ -42,6 +44,7 @@ public class Scissors : MonoBehaviour {
 			cols [0].isTrigger = false;
 			held = true;
 			this.GetComponent<Animator> ().SetBool ("cutting", true);
+			this.GetComponent<AudioSource> ().Play ();
 		}
 
 		if (col.gameObject.tag == "soil" || col.gameObject.tag == "Player") {
@@ -56,6 +59,7 @@ public class Scissors : MonoBehaviour {
 		if (col.gameObject.tag == "hand") {
 			held = true;
 			this.GetComponent<Animator> ().SetBool ("cutting", true);
+			this.GetComponent<AudioSource> ().Play ();
 		}
 	}
 

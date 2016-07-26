@@ -10,7 +10,7 @@ public class Flower : MonoBehaviour {
 
 	protected float minGrowthLength = 5f;
 	protected float maxGrowthLength = 10f;
-	protected float growthFactor = 1f;
+	protected float growthFactor = 1/2f;
 
 	public Transform stem;
 	protected Transform leaves;

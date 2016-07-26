@@ -1,15 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FlowerBookSystem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Flowers/Flower.cs">
     <Files>
-      <File FileName="Assets/Scripts/FlowerBookSystem.cs" Line="36" Column="29" />
-      <File FileName="Assets/Scripts/Flowers/Dandelion/Dadelion.cs" Line="46" Column="4" />
-      <File FileName="Assets/Scripts/Seeds/DandelionSeed.cs" Line="22" Column="1" />
-      <File FileName="Assets/Scripts/Tools/Scissors.cs" Line="65" Column="1" />
-      <File FileName="Assets/Scripts/Flowers/Flower.cs" Line="13" Column="34" />
-      <File FileName="Assets/Scripts/Flowers/Rose/Rose.cs" Line="22" Column="59" />
-      <File FileName="Assets/Scripts/Flowers/Sunflower/Sunflower.cs" Line="18" Column="14" />
-      <File FileName="Assets/Scripts/Tools/WateringCan.cs" Line="45" Column="38" />
+      <File FileName="Assets/Scripts/Tools/Scissors.cs" Line="62" Column="34" />
+      <File FileName="Assets/Scripts/Tools/WateringCan.cs" Line="64" Column="1" />
+      <File FileName="Assets/Scripts/Flowers/Flower.cs" Line="37" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

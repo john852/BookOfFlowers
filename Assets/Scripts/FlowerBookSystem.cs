@@ -4,7 +4,6 @@ using System.Collections;
 public class FlowerBookSystem : MonoBehaviour {
 
 	private float time;
-	private int hours;
 	private GameObject clouds;
 	private float cloudSpawnTimer;
 
@@ -22,7 +21,6 @@ public class FlowerBookSystem : MonoBehaviour {
 	void Start () {
 		clouds = GameObject.Find ("Clouds");
 		time = Time.deltaTime;
-		hours = 0;
 		seeds = GameObject.Find ("Seeds");
 
 		cloudSpawnTimer = Random.Range (60f, 120f);
@@ -98,11 +96,15 @@ public class FlowerBookSystem : MonoBehaviour {
 
 	public float GetTime() {
 		time += Time.deltaTime;
-		hours = (int)(time / 60f);
 
-		if (hours > 24) {
+//		if (time > 24f*60f) {
+//			time = Time.deltaTime;
+//			hours = (int)(time / 60f);
+//		}
+
+		//for testing 
+		if (time >= 1440f) {
 			time = Time.deltaTime;
-			hours = (int)(time / 60f);
 		}
 
 //		Debug.Log (time);

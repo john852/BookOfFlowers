@@ -15,6 +15,7 @@ public class WateringCan : MonoBehaviour {
 
 	public bool pouring = false;
 	public bool waterPour = false;
+	private bool soundOn = false;
 
 
 	void Start () {
@@ -24,6 +25,7 @@ public class WateringCan : MonoBehaviour {
 		flowers = GameObject.Find ("Flowers").transform;
 		waterPos = this.transform.GetChild (0);
 		waterPouring.SetActive(false);
+		soundOn = false;
 
 		em = waterPouring.GetComponent<ParticleSystem> ().emission;
 		rate = em.rate;
@@ -69,10 +71,13 @@ public class WateringCan : MonoBehaviour {
 		rate = em.rate;
 		rate.constantMin = temp-10f;
 		rate.constantMax = temp-10f;
+		this.GetComponent<AudioSource> ().volume -= .05f;
 		em.rate = rate;
 
 		if (stopTime >= (0.02f * 10f * 2.4f)) {
 			waterPouring.SetActive (false);
+			soundOn = false;
+			this.GetComponent<AudioSource> ().Stop ();
 			foreach (Transform child in flowers) {
 				child.GetComponent<Flower> ().watering = false;
 			}
@@ -90,6 +95,11 @@ public class WateringCan : MonoBehaviour {
 		if (pouring && (degree >= 297 && degree <= 340)) {
 			waterPour = true;
 			waterPouring.SetActive (true);
+			this.GetComponent<AudioSource> ().volume = .6f;
+			if (!soundOn) {
+				this.GetComponent<AudioSource> ().Play ();
+				soundOn = true;
+			}
 			rate = em.rate;
 			rate.constantMin = 100f;
 			rate.constantMax = 100f;
