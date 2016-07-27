@@ -10,7 +10,7 @@ public class Flower : MonoBehaviour {
 
 	protected float minGrowthLength = 5f;
 	protected float maxGrowthLength = 10f;
-	protected float growthFactor = 1/2f;
+	protected float growthFactor = 1f;
 
 	public Transform stem;
 	protected Transform leaves;
@@ -110,14 +110,15 @@ public class Flower : MonoBehaviour {
 	protected float wateringFactor = 0.1f;
 	// Update is called once per frame
 	virtual public void Update () {
-		if (!cut) {
-			if (watering) {
-				time += wateringFactor;
-				if (flowerbody.GetComponent<FlowerBody> ().active) {
-					flowerbody.GetComponent<FlowerBody> ().time += wateringFactor;
-				}
-			}
 
+		if (watering) {
+			time += wateringFactor;
+			if (flowerbody.GetComponent<FlowerBody> ().active) {
+				flowerbody.GetComponent<FlowerBody> ().time += wateringFactor;
+			}
+		}
+
+		if (!cut) {
 			time += Time.deltaTime;
 			hours = (int)(time / 60f);
 

@@ -24,7 +24,7 @@ public class FlowerBookSystem : MonoBehaviour {
 		seeds = GameObject.Find ("Seeds");
 
 		cloudSpawnTimer = Random.Range (60f, 120f);
-		seedWaitSpawnTime = 3f*60f;
+		seedWaitSpawnTime = 2f*60f;
 		dandelionSpawnTime = 1.5f * seedWaitSpawnTime;
 		dandelionPrefab = Resources.Load("Seeds/DandelionSeed") as GameObject;
 

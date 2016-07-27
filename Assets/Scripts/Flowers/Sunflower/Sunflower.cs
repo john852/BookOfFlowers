@@ -48,7 +48,7 @@ public class Sunflower: Flower {
 			}
 		}
 
-		if (time >= (growthLength * 2f)) {
+		if (time >= (growthLength * 1.5f)) {
 			StopAllCoroutines ();
 
 			if (seeds.transform.childCount >= 10 || cut) {
