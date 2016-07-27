@@ -41,7 +41,7 @@ public class Flower : MonoBehaviour {
 		float ramSize = Random.Range (.8f, 1.4f);
 		numOfLeaves = Random.Range (4, 6);
 
-		leaveTimer = ((3f/4f) * growthLength) / numOfLeaves;
+		leaveTimer = ((3f/5f) * growthLength) / numOfLeaves;
 		originalLeaveTimer = leaveTimer;
 
 
@@ -79,7 +79,7 @@ public class Flower : MonoBehaviour {
 	virtual public void Cut() {
 		StartCoroutine (Decay ());
 		growthLength /= 2f;
-		time = growthLength * 1.8f;
+		time = growthLength * 1.1f;
 			
 //		if (time >= (growthLength * 2f))
 //			time = growthLength * (1.5f);
